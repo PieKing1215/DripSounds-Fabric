@@ -1,5 +1,6 @@
 package me.pieking1215.waterdripsound.mixin.client;
 
+import me.pieking1215.waterdripsound.WaterDripSoundConfig;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.WaterSplashParticle;
 import net.minecraft.client.world.ClientWorld;
@@ -8,12 +9,10 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import me.pieking1215.waterdripsound.WaterDripSoundConfig;
 
 @Mixin(WaterSplashParticle.SplashFactory.class)
 public class MixinWaterSplashParticle {
