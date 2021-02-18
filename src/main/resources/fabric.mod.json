@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "waterdripsound",
+  "version": "${version}",
+  "name": "Water Drip Sound",
+  "description": "Makes water drips play a sound.",
+  "authors": [
+	"PieKing1215"
+  ],
+  "contact": {
+	"homepage": "",
+	"sources": ""
+  },
+  "license": "GPL v3.0",
+  "icon": "assets/waterdripsound/icon.png",
+  "environment": "*",
+  "mixins": [
+	"waterdripsound.mixins.json"
+  ],
+  "entrypoints": {
+    "client": [
+      "me.pieking1215.waterdripsound.WaterDripSound"
+    ],
+    "modmenu": [
+      "me.pieking1215.waterdripsound.WaterDripSoundModMenuIntegration"
+    ]
+  },
+  "depends": {
+	"fabricloader": ">=0.11.0",
+	"fabric": "*",
+	"minecraft": "1.16.5"
+  }
+}

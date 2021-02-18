@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.pieking1215.waterdripsound.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+	"client.MixinWaterSplashParticle",
+	"client.MixinLandingLavaParticle",
+	"client.MixinClientWorld"
+  ],
+  "injectors": {
+	"defaultRequire": 1
+  }
+}
