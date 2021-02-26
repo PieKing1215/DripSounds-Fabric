@@ -7,6 +7,7 @@ repositories {
     maven {
         url "https://maven.terraformersmc.com"
     }
+    maven { url "https://maven.shedaniel.me/" }
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -22,11 +23,11 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation "com.terraformersmc:modmenu:1.16.7"
-    modApi("me.shedaniel.cloth:config-2:4.8.3") {
+    modImplementation "com.terraformersmc:modmenu:2.0.0-beta.2"
+    modApi("me.shedaniel.cloth:config-2:5.0.0") {
         exclude(group: "net.fabricmc.fabric-api")
     }
-    include "me.shedaniel.cloth:config-2:4.8.3"
+    include "me.shedaniel.cloth:config-2:5.0.0"
 }
 
 processResources {
