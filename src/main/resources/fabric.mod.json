@@ -8,8 +8,9 @@
 	"PieKing1215"
   ],
   "contact": {
-	"homepage": "",
-	"sources": ""
+	"homepage": "https://github.com/PieKing1215/DripSounds-Fabric",
+	"sources": "https://github.com/PieKing1215/DripSounds-Fabric",
+    "issues": "https://github.com/PieKing1215/DripSounds-Fabric/issues"
   },
   "license": "GPL v3.0",
   "icon": "assets/waterdripsound/icon.png",

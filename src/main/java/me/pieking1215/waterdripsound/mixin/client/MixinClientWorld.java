@@ -11,7 +11,7 @@ public class MixinClientWorld {
 
     // modify rate of drip spawning
 
-    @ModifyConstant(method = "randomBlockDisplayTick(IIIILjava/util/Random;ZLnet/minecraft/util/math/BlockPos$Mutable;)V", constant = @Constant(intValue = 10))
+    @ModifyConstant(method = "randomBlockDisplayTick", constant = @Constant(intValue = 10))
     private int modifyDripChance(int original){
         return WaterDripSoundConfig.GENERAL.dripChance.get();
     }
