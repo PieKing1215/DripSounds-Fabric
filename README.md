@@ -4,9 +4,22 @@
   <a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric"><img src="http://cf.way2muchnoise.eu/full_448311_downloads(E04E14-555-fff-010101-1C1C1C).svg" alt="Download Count"></a>
 </h1>
 
-### [Forge Version Here](https://github.com/PieKing1215/WaterDripSound)
-
 ### Minecraft Fabric mod that adds sounds for drip particles landing and other related changes
+
+<table>
+<tr>
+  <td>Forge</td>
+  <td><a href="https://github.com/PieKing1215/DripSounds-Forge">GitHub</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a></td>
+  <td><a href="https://modrinth.com/mod/waterdripsound">Modrinth</a></td>
+</tr>
+<tr>
+  <td>Fabric</td>
+  <td><a href="https://github.com/PieKing1215/DripSounds-Fabric">GitHub</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a></td>
+  <td><a href="https://modrinth.com/mod/dripsounds-fabric">Modrinth</a></td>
+</tr>
+</table>
 
 - Plays water pop sound when a water drop lands
 - Adds a new sizzle sound for when a lava drop lands
@@ -20,7 +33,7 @@ This mod is client-side, so it does not need to be installed on the server for i
 
 Feel free to use in packs if you wish.
 
-Do not download this mod from anywhere other than the DripSounds-Fabric GitHub page or the DripSounds-Fabric Curseforge page.<br>
+Do not download this mod from anywhere other than the DripSounds-Fabric GitHub, CurseForge, or Modrinth page.<br>
 This mod may not be reposted to any other third-party websites.<br>
 [#StopModReposts](https://stopmodreposts.org)
 
