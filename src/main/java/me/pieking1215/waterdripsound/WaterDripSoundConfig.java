@@ -35,7 +35,7 @@ public class WaterDripSoundConfig {
 
     public static void doneLoading(){
         try {
-            File f = new File(FabricLoader.getInstance().getConfigDirectory(), "waterdripsound.json");
+            File f = new File(FabricLoader.getInstance().getConfigDir().toFile(), "waterdripsound.json");
             f.getParentFile().mkdirs();
             if (!f.exists()) f.createNewFile();
             configFile = f;
