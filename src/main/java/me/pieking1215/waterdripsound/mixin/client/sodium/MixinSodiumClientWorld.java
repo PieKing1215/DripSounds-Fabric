@@ -23,7 +23,8 @@ public class MixinSodiumClientWorld {
 //        return WaterDripSoundConfig.GENERAL.dripChance.get();
 //    }
 
-    // TODO: RE-ENABLE WHEN SODIUM COMES OUT FOR 1.17
+
+    // this became unnecessary in 1.17 because the normal non-sodium mixin works now
 //    /**
 //     * Since all of the good mixin types don't work on other mixins, need to do it this way.
 //     */

@@ -21,15 +21,15 @@ public class DripSoundPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-
+        // this became unnecessary in 1.17 because the normal non-sodium mixin works now
         if(mixinClassName.equals("me.pieking1215.waterdripsound.mixin.client.MixinClientWorld"))
-            return !FabricLoader.getInstance().isModLoaded("sodium");
+            return true;//FabricLoader.getInstance().isModLoaded("sodium");
 
         if(mixinClassName.equals("me.pieking1215.waterdripsound.mixin.client.sodium.MixinSodiumClientWorld"))
-            return FabricLoader.getInstance().isModLoaded("sodium");
+            return false; //!FabricLoader.getInstance().isModLoaded("sodium");
 
         if(mixinClassName.equals("me.pieking1215.waterdripsound.mixin.client.sodium.MixinSodiumFluidState"))
-            return FabricLoader.getInstance().isModLoaded("sodium");
+            return false;//!FabricLoader.getInstance().isModLoaded("sodium");
 
         return true;
     }
