@@ -34,10 +34,6 @@ This mod is client-side, so it does not need to be installed on the server for i
 
 Feel free to use in packs if you wish.
 
-Do not download this mod from anywhere other than the DripSounds-Fabric GitHub, CurseForge, or Modrinth page.<br>
-This mod may not be reposted to any other third-party websites.<br>
-[#StopModReposts](https://stopmodreposts.org)
-
 The mod is licensed under the [GNU Lesser General Public License v3.0](COPYING)
 
 ## Upcoming
