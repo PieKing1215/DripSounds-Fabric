@@ -11,6 +11,7 @@ import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
@@ -19,8 +20,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class WaterDripSoundConfig {
     public static final General GENERAL = new General();
@@ -32,6 +35,7 @@ public class WaterDripSoundConfig {
         public final AtomicDouble volume = new AtomicDouble(0.3);
         public final AtomicInteger dripChance = new AtomicInteger(10);
         public final AtomicBoolean useDripstoneSounds = new AtomicBoolean(true);
+        public final AtomicReference<SoundCategory> soundCategory = new AtomicReference<>(SoundCategory.AMBIENT);
     }
 
     public static void doneLoading(){
@@ -49,6 +53,11 @@ public class WaterDripSoundConfig {
                 if(obj.has("volume")) GENERAL.volume.set(obj.get("volume").getAsDouble());
                 if(obj.has("dripChance")) GENERAL.dripChance.set(obj.get("dripChance").getAsInt());
                 if(obj.has("useDripstoneSounds")) GENERAL.useDripstoneSounds.set(obj.get("useDripstoneSounds").getAsBoolean());
+                if(obj.has("soundCategory")) GENERAL.soundCategory.set(
+                    Arrays.stream(SoundCategory.values())
+                        .filter(c -> c.getName().equals(obj.get("soundCategory").getAsString()))
+                        .findFirst()
+                        .orElse(SoundCategory.AMBIENT));
             }
             jr.close();
         } catch (IOException e) {
@@ -68,6 +77,7 @@ public class WaterDripSoundConfig {
         general.addEntry(eb.startIntSlider(new TranslatableText("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new LiteralText("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
         general.addEntry(eb.startIntSlider(new TranslatableText("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> new LiteralText("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
         general.addEntry(eb.startBooleanToggle(new TranslatableText("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(new TranslatableText("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
+        general.addEntry(eb.startEnumSelector(new TranslatableText("config.waterdripsound.soundCategory"), SoundCategory.class, GENERAL.soundCategory.get()).setDefaultValue(SoundCategory.AMBIENT).setEnumNameProvider(anEnum -> new TranslatableText("soundCategory." + ((SoundCategory)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
 
         builder.setSavingRunnable(() -> {
             try {
@@ -82,6 +92,7 @@ public class WaterDripSoundConfig {
                     jw.name("volume").value(GENERAL.volume.get());
                     jw.name("dripChance").value(GENERAL.dripChance.get());
                     jw.name("useDripstoneSounds").value(GENERAL.useDripstoneSounds.get());
+                    jw.name("soundCategory").value(GENERAL.soundCategory.get().getName());
 
                     jw.endObject();
                     jw.close();

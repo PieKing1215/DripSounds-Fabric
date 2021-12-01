@@ -30,7 +30,7 @@ public class MixinLandingLavaParticle {
                 if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
                     vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
                 }
-                clientWorld.playSound(x, y, z, WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_LAVA : WaterDripSound.LAVA_DRIP_EVENT, SoundCategory.AMBIENT, vol, 1f + (float)(Math.random() * 0.1f), false);
+                clientWorld.playSound(x, y, z, WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_LAVA : WaterDripSound.LAVA_DRIP_EVENT, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f + (float)(Math.random() * 0.1f), false);
             }
         }
     }
