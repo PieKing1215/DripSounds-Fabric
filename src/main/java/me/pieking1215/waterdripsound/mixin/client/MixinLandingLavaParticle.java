@@ -8,6 +8,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,7 +27,10 @@ public class MixinLandingLavaParticle {
             if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().getFluid() != Fluids.LAVA) {
                 // play the sound
                 float vol = MathHelper.clamp(WaterDripSoundConfig.GENERAL.volume.floatValue() * 0.5f, 0f, 1f);
-                clientWorld.playSound(x, y, z, WaterDripSound.LAVA_DRIP_EVENT, SoundCategory.AMBIENT, vol, 1f + (float)(Math.random() * 0.1f), false);
+                if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
+                    vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
+                }
+                clientWorld.playSound(x, y, z, WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_LAVA : WaterDripSound.LAVA_DRIP_EVENT, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f + (float)(Math.random() * 0.1f), false);
             }
         }
     }
