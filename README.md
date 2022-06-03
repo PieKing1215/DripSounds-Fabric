@@ -11,14 +11,14 @@
 <tr>
   <td>Forge</td>
   <td><a href="https://github.com/PieKing1215/DripSounds-Forge">GitHub</a></td>
-  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a></td>
   <td><a href="https://modrinth.com/mod/waterdripsound">Modrinth</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a></td>
 </tr>
 <tr>
   <td>Fabric</td>
   <td><a href="https://github.com/PieKing1215/DripSounds-Fabric">GitHub</a></td>
-  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a></td>
   <td><a href="https://modrinth.com/mod/dripsounds-fabric">Modrinth</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a></td>
 </tr>
 </table>
 
