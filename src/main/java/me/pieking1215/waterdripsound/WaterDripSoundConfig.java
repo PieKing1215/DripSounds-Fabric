@@ -12,8 +12,7 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.io.File;
@@ -67,17 +66,17 @@ public class WaterDripSoundConfig {
 
     public static Screen registerClothConfig(Screen parent) {
 
-        ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(new TranslatableText("config.waterdripsound.general"));
+        ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(Text.translatable("config.waterdripsound.general"));
         builder.setDefaultBackgroundTexture(new Identifier("minecraft:textures/block/mossy_stone_bricks.png"));
         builder.transparentBackground();
 
         ConfigEntryBuilder eb = builder.entryBuilder();
-        ConfigCategory general = builder.getOrCreateCategory(new TranslatableText("key.waterdripsound.category"));
-        general.addEntry(eb.startBooleanToggle(new TranslatableText("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
-        general.addEntry(eb.startIntSlider(new TranslatableText("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new LiteralText("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
-        general.addEntry(eb.startIntSlider(new TranslatableText("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> new LiteralText("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
-        general.addEntry(eb.startBooleanToggle(new TranslatableText("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(new TranslatableText("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
-        general.addEntry(eb.startEnumSelector(new TranslatableText("config.waterdripsound.soundCategory"), SoundCategory.class, GENERAL.soundCategory.get()).setDefaultValue(SoundCategory.AMBIENT).setEnumNameProvider(anEnum -> new TranslatableText("soundCategory." + ((SoundCategory)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
+        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("key.waterdripsound.category"));
+        general.addEntry(eb.startBooleanToggle(Text.translatable("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
+        general.addEntry(eb.startIntSlider(Text.translatable("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> Text.literal("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
+        general.addEntry(eb.startIntSlider(Text.translatable("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> Text.literal("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
+        general.addEntry(eb.startBooleanToggle(Text.translatable("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(Text.translatable("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
+        general.addEntry(eb.startEnumSelector(Text.translatable("config.waterdripsound.soundCategory"), SoundCategory.class, GENERAL.soundCategory.get()).setDefaultValue(SoundCategory.AMBIENT).setEnumNameProvider(anEnum -> Text.translatable("soundCategory." + ((SoundCategory)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
 
         builder.setSavingRunnable(() -> {
             try {
