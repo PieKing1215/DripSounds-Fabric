@@ -6,8 +6,8 @@
   "plugin": "me.pieking1215.waterdripsound.mixin.DripSoundPlugin",
   "mixins": [],
   "client": [
-	"client.MixinWaterSplashParticle",
-	"client.MixinLandingLavaParticle",
+    "client.MixinContinuousFallingBlockLeakParticle",
+    "client.BlockLeakParticleAccessor",
 	"client.MixinClientWorld",
     "client.sodium.MixinSodiumClientWorld",
     "client.sodium.MixinSodiumFluidState"
