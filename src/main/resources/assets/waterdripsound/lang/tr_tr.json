@@ -1,0 +1,10 @@
+{
+  "key.waterdripsound.category": "Genel",
+  "config.waterdripsound.general": "Drip Sounds (Damla Sesleri) Ayarları",
+  "config.waterdripsound.enable": "Etkinleştir",
+  "config.waterdripsound.volume": "Ses Düzeyi",
+  "config.waterdripsound.dripChance": "Damla Şansı",
+  "config.waterdripsound.useDripstoneSounds": "Damla Taşı Seslerini Kullan",
+  "tooltip.config.waterdripsound.useDripstoneSounds": "Etkinse, 1.17'de eklenen Damla Taşı\nsu/lav damla seslerini kullanır.\nDeğilse, modun eski sürümlerindeki\nsesleri kullanır.",
+  "config.waterdripsound.soundCategory": "Ses Kategorisi"
+}
